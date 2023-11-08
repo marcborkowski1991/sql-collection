@@ -70,7 +70,7 @@ FROM (
                         THEN 'Facebook App Install Dynamic Ads'
                     WHEN
                         INSTR(UPPER(DAT.FACEBOOK_CAMPAIGN_NAME), 'APP INSTALL') > 0
-                        AND INSTR(DAT.FACEBOOK_CAMPAIGN_NAME, 'RETARGETING') = 0
+                        AND INSTR(UPPER(DAT.FACEBOOK_CAMPAIGN_NAME), 'RETARGETING') = 0
                         THEN 'Facebook App Install Static Ads'
                     WHEN INSTR(UPPER(DAT.FACEBOOK_CAMPAIGN_NAME), 'RETARGETING') > 0 THEN 'Facebook Dynamic Ads'
                     WHEN INSTR(UPPER(DAT.FACEBOOK_CAMPAIGN_NAME), 'WEB PROSPECTING') > 0 THEN 'Facebook Static Ads'
