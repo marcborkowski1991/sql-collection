@@ -91,15 +91,17 @@ FROM (
         DAT.REPORTING_DATE >= '2020-01-01'
         AND (INSTR(DAT.CAMP_ID, '-SA.C-') > 0 OR INSTR(UPPER(DAT.FACEBOOK_CAMPAIGN_NAME), 'PERFORMANCE') > 0)
         AND (COALESCE(DAT.IMPRESSIONS, 0) + COALESCE(DAT.COST_EURO, 0) + COALESCE(DAT.CLICKS, 0)) > 0
+        
         AND DAT.FACEBOOK_ACCOUNT_ID NOT IN (
-            10156300243778700
-            , 79042523
-            , 10154137716208700
-            , 10154135741873700
-            , 10154137716063700
-            , 10154135739178700
-            , 10154715337948700
-            , 10154354445848700
+            10156300243778735       -- OTTO Jobs
+            , 79042523              -- OTTO Page
+            , 10154137716208735     -- reBLOG
+            , 10154135741873735     -- Roombeez
+            , 10154137716063735     -- Soulfully
+            , 10154135739178735     -- Two For Fashion
+            , 10154715337948735     -- UPDATED
+            , 10154354445848735     -- Social Media Kampagnen
+            , 10155493797143735     -- UPDATED_SEO
         )
     GROUP BY
         DAT.REPORTING_DATE, DAT.CAMP_ID
